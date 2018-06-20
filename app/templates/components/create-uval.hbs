@@ -1,16 +1,18 @@
-<!-- Adding the Uval Form -->
+<!-- Adding the u-value form -->
 <form>
 	<div class="form-group">
 		<label>Material Name</label>
-		{{input type="text" class="form-control" value=materialName placeholder="Add First Name..."}}
+		{{input type="text" class="form-control" value=materialName placeholder="Material Name..."}}
 	</div>
+
   <div class="form-group">
 		<label>Thickness</label>
-		{{input type="text" class="form-control" value=thickness placeholder="Add Surname..."}}
+		{{input type="text" class="form-control" value=thickness placeholder="Thickness..."}}
 	</div>
+
   <div class="form-group">
-    <label>K Value</label>
-    {{input type="text" class="form-control" value=kValue placeholder="Add Phone Number..."}}
+    <label>K-Value</label>
+    {{input type="text" class="form-control" value=kValue placeholder="K-Value..."}}
   </div>
 
 	<button {{action 'addUval'}} class="btn btn-primary">

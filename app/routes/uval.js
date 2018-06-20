@@ -2,9 +2,9 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model()
-{
-  return {
-    uval: this.get('store').peekAll('uval')
-  };
-}
+  {
+    return {
+      uval: this.get('store').peekAll('uval')
+    };
+  }
 });

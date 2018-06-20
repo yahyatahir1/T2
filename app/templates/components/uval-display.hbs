@@ -4,7 +4,7 @@
       <th>Material</th>
       <th>Thickness</th>
       <th>K-Value</th>
-      <th>Resistivity, K m2/W</th>
+      <th>Resistivity, K m<sup>2</sup>/W</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -17,6 +17,7 @@
         <td>{{uval.thickness}}</td>
         <td>{{uval.kValue}}</td>
         <td>{{uval.resistivity}}</td>
+
         <td>
           {{#unless uval.resistivityOverride}}
             <button {{action 'deleteUval' uval}} class="btn btn-danger">
@@ -29,11 +30,11 @@
     <!-- There is no infomation-->
     {{else}}
       <tr>
-        <td colspan="4">
+        <td colspan="5">
           There is no infomation.
         </td>
       </tr>
     {{/each}}
   </tbody>
 </table>
-Hello
+Hello - Hi!

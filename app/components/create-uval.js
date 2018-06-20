@@ -1,12 +1,12 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-//Empty strings
+// Empty strings
 materialName: '',
 thickness: '',
 kValue: '',
 
-//adding uval function
+// Adding uval function
 actions:{
     addUval()
     {
@@ -15,21 +15,22 @@ actions:{
       let thickness=this.get('thickness');
       let kValue=this.get('kValue');
 
-    // Pass the data up to the controller
-    this.get('addUval')({
-      materialName: materialName,
-      thickness: thickness,
-      kValue: kValue,
-    });
+      // Pass the data up to the controller
+      this.get('addUval')({
+        materialName: materialName,
+        thickness: thickness,
+        kValue: kValue,
+      });
 
-    // Clears the form
-    this.emptyForm();
+      // Clears the form
+      this.emptyForm();
     }
   },
-    emptyForm()
-      {
-        this.set('materialName', '');
-        this.set('thickness', '');
-        this.set('kValue', '');
-      }
+
+  emptyForm()
+  {
+    this.set('materialName', '');
+    this.set('thickness', '');
+    this.set('kValue', '');
+  }
 });

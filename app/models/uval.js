@@ -6,17 +6,20 @@ export default DS.Model.extend({
     kValue: DS.attr('string'),
     resistivityOverride: DS.attr('string'),
 
-    //computed proprty to calculate the Resistivity
+    // Computed proprty to calculate the resistivity
     resistivity: Ember.computed('thickness', 'kValue', function()
     {
+      // We have an override so use it
       if (parseFloat(this.get('resistivityOverride'))) {
         return parseFloat(this.get('resistivityOverride'));
       }
 
+      // No k-value is set so return zero
       if (!parseFloat(this.get('kValue'))) {
         return 0;
       }
 
-      return parseFloat(this.get('thickness'))  /  parseFloat(this.get('kValue'));
+      // Calculate the resistance
+      return parseFloat(this.get('thickness')) / parseFloat(this.get('kValue'));
     })
 });

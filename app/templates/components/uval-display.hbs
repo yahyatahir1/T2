@@ -1,0 +1,39 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Material</th>
+      <th>Thickness</th>
+      <th>K-Value</th>
+      <th>Resistivity, K m2/W</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- List of infomation submitted -->
+    {{#each uval as |uval|}}
+      <tr>
+        <td>{{uval.materialName}}</td>
+        <td>{{uval.thickness}}</td>
+        <td>{{uval.kValue}}</td>
+        <td>{{uval.resistivity}}</td>
+        <td>
+          {{#unless uval.resistivityOverride}}
+            <button {{action 'deleteUval' uval}} class="btn btn-danger">
+              Delete
+            </button>
+          {{/unless}}
+        </td>
+      </tr>
+
+    <!-- There is no infomation-->
+    {{else}}
+      <tr>
+        <td colspan="4">
+          There is no infomation.
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+Hello
